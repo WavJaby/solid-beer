@@ -1,0 +1,23 @@
+@import '../../layers.css';
+@import 'tailwindcss/utilities.css' layer(utilities) prefix(tw) source(none);
+@reference '../../styles.css';
+@source './ImageManager.tsx';
+
+@layer components {
+  .image-manager-upload {
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .image-manager-upload > button,
+  .image-manager-upload > .image-manager-loading {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    max-height: none;
+    margin: 0;
+    border-radius: inherit;
+  }
+}

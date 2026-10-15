@@ -1,0 +1,83 @@
+@import '../../layers.css';
+@layer components {
+  .account-switcher {
+    position: relative;
+  }
+
+  .account-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 1000;
+    width: 360px;
+    max-width: calc(100vw - 2rem);
+    margin: 0;
+    box-shadow: 0 4px 20px rgb(0 0 0 / 30%);
+    animation: account-menu-fade-in 150ms ease-out;
+    padding-bottom: 0.5rem;
+  }
+
+  .account-menu > .header-bar {
+    position: relative;
+  }
+
+  .account-menu > .header-bar > div {
+    width: 100%;
+    line-height: 2rem;
+  }
+
+  .account-menu > .header-bar > button {
+    --_size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .account-menu-avatar {
+    --account-avatar-size: 6rem;
+    display: grid;
+    place-items: center;
+    width: var(--account-avatar-size);
+    height: var(--account-avatar-size);
+  }
+
+  .account-menu-avatar > i {
+    font-size: var(--account-avatar-size);
+    width: 100%;
+    height: 100%;
+  }
+
+  .account-menu-avatar > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    box-sizing: border-box;
+  }
+
+  .account-menu-camera {
+    right: 0;
+    bottom: 0;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    background: var(--surface-variant) !important;
+    border: none !important;
+  }
+
+  .account-menu-camera > i {
+    color: var(--on-surface-variant) !important;
+  }
+
+  @keyframes account-menu-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

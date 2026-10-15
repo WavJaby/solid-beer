@@ -1,0 +1,54 @@
+@import '../../layers.css';
+@import 'tailwindcss/utilities.css' layer(utilities) prefix(tw) source(none);
+@reference '../../styles.css';
+@source './Dialog.tsx';
+
+/* Reserve the page scrollbar slot before opening, including while overflow is hidden. */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* DOM state owns the lock; nested dialogs + disposal need no separate counter. */
+html:has(.solid-beer-dialog[open]),
+body:has(.solid-beer-dialog[open]) {
+  overflow: hidden;
+}
+
+.solid-beer-dialog {
+  /* BeerCSS owns motion endpoints; hide only after motion + top-layer exit finish. */
+  transition:
+    opacity var(--speed3),
+    transform var(--speed3),
+    overlay var(--speed3) allow-discrete,
+    visibility 0s var(--speed3);
+}
+
+.solid-beer-dialog[open] {
+  transition-delay: 0s;
+}
+
+.solid-beer-dialog::backdrop {
+  transition:
+    opacity var(--speed3),
+    overlay var(--speed3) allow-discrete,
+    visibility 0s var(--speed3);
+}
+
+.solid-beer-dialog[open]::backdrop {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+@starting-style {
+  .solid-beer-dialog[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solid-beer-dialog,
+  .solid-beer-dialog::backdrop {
+    transition: none;
+  }
+}

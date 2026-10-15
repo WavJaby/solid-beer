@@ -1,0 +1,128 @@
+{
+  "name": "solid-beer",
+  "version": "0.0.0",
+  "description": "BeerCSS-first components for SolidJS with optional Tailwind CSS utilities",
+  "license": "MIT",
+  "author": "WavJaby",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WavJaby/solid-beer.git"
+  },
+  "homepage": "https://github.com/WavJaby/solid-beer#readme",
+  "bugs": {
+    "url": "https://github.com/WavJaby/solid-beer/issues"
+  },
+  "files": [
+    "dist",
+    "INSTALL.md",
+    "API.md"
+  ],
+  "private": false,
+  "sideEffects": ["**/*.css", "./src/runtime.ts", "./dist/runtime.js"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": {},
+  "exports": {
+    ".": {
+      "solid": {
+        "development": "./dist/index.dev.jsx",
+        "import": "./dist/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.dev.js"
+        }
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./styles.css": "./dist/styles.css",
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "import": "./dist/runtime.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "import": "./dist/vite.js"
+    }
+  },
+  "typesVersions": {},
+  "scripts": {
+    "dev": "vite serve dev",
+    "build:demo": "vite build dev",
+    "preview:demo": "vite preview dev",
+    "check:demo": "node scripts/check-demo.mjs",
+    "check:docs": "node scripts/check-docs.mjs",
+    "build": "node scripts/build.mjs",
+    "build:styles": "vite build --config vite.styles.config.ts",
+    "check:package": "node scripts/check-package.mjs",
+    "check:solid": "node scripts/check-solid.mjs",
+    "check:template": "node scripts/check-template.mjs",
+    "build:create": "node packages/create-solid-beer/scripts/build.mjs",
+    "test:create": "node packages/create-solid-beer/scripts/build.mjs && node --test packages/create-solid-beer/test/cli.test.mjs",
+    "test": "concurrently \"vitest run\" \"vitest run --mode ssr\"",
+    "test:client": "vitest run",
+    "test:ssr": "vitest run --mode ssr",
+    "prepack": "node scripts/build.mjs",
+    "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "format:check": "prettier --ignore-path .gitignore --check \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "lint": "concurrently \"eslint --ignore-path .gitignore --max-warnings 0 --ext .ts,.tsx src\" \"tsc --noEmit\"",
+    "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 --ext .ts,.tsx src",
+    "lint:types": "tsc --noEmit",
+    "update-deps": "bun update --latest"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.24.5",
+    "solid-js": "^1.9.9",
+    "vite": "^5.0.0 || ^6.4.4 || ^7.3.7 || ^8.3.4"
+  },
+  "peerDependenciesMeta": {
+    "@babel/core": { "optional": true },
+    "vite": { "optional": true }
+  },
+  "dependencies": {
+    "beercss": "5.0.3",
+    "material-dynamic-colors": "^1.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/types": "^7.24.5",
+    "@babel/preset-typescript": "^7.24.1",
+    "babel-preset-solid": "^1.8.17",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^20.12.12",
+    "@types/babel__core": "^7.20.5",
+    "autoprefixer": "^10.5.4",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.21.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "jsdom": "^24.0.0",
+    "postcss-nested": "^7.0.2",
+    "prettier": "3.0.0",
+    "solid-js": "^1.9.17",
+    "tailwindcss": "^4.3.3",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-solid": "^2.10.2",
+    "vitest": "^1.6.0"
+  },
+  "keywords": [
+    "solid"
+  ],
+  "packageManager": "bun@1.4.3",
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.3.0"
+  }
+}

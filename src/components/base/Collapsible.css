@@ -1,0 +1,35 @@
+@import '../../layers.css';
+@import 'tailwindcss/utilities.css' layer(utilities) prefix(tw) source(none);
+@reference '../../styles.css';
+@source './Collapsible.tsx';
+
+@layer components {
+  .collapsible {
+    padding: 0;
+
+    > div > .collapsible-toggle > i {
+      transform: rotate(90deg);
+      transition: transform var(--speed2);
+    }
+
+    > .collapsible-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--speed2);
+
+      > * {
+        overflow: hidden;
+      }
+    }
+
+    &.active {
+      > div > .collapsible-toggle > i {
+        transform: rotate(0);
+      }
+
+      > .collapsible-content {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+}

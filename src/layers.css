@@ -1,0 +1,2 @@
+/* Cascade order is fixed by the first sheet to name a layer; every published sheet imports this first, so load order cannot demote utilities/components below BeerCSS base. */
+@layer theme, base, components, utilities;

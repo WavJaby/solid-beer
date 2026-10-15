@@ -1,0 +1,4 @@
+@import './layers.css';
+
+@import 'tailwindcss/theme.css' layer(theme) prefix(tw);
+@import 'beercss/dist/cdn/beer.css' layer(base);
