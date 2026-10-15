@@ -1,0 +1,14 @@
+@import '../src/styles.css';
+@import 'tailwindcss/utilities.css' layer(utilities) prefix(tw) source(none);
+@source './';
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-container), var(--surface-container));
+}
+
+/* Code dialog: keep sample source readable; BeerCSS pre has no min width. */
+pre code {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre;
+}
