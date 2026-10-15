@@ -1,0 +1,25 @@
+{
+  "name": "create-solid-beer",
+  "version": "0.0.0",
+  "description": "Create a Solid Beer app with Solid, TypeScript and Vite",
+  "license": "MIT",
+  "author": "WavJaby",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WavJaby/solid-beer.git",
+    "directory": "packages/create-solid-beer"
+  },
+  "type": "module",
+  "bin": {
+    "create-solid-beer": "dist/index.mjs"
+  },
+  "files": ["dist", "LICENSE"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepack": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs && node --test test/cli.test.mjs"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}
