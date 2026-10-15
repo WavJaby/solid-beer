@@ -1,4 +1,10 @@
+<p>
+  <img width="100%" src="https://assets.solidjs.com/banner?type=Ecosystem&amp;background=tiles&amp;project=solid-beer" alt="Solid Beer — SolidJS ecosystem library">
+</p>
+
 # solid-beer
+
+[![npm version](https://img.shields.io/npm/v/solid-beer?logo=npm)](https://www.npmjs.com/package/solid-beer) [![CI](https://github.com/WavJaby/solid-beer/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/WavJaby/solid-beer/actions/workflows/tests.yml) [![MIT license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 BeerCSS for SolidJS: native classes, typed components and ready-made dialogs, search, menus, images and tables. Includes styles, icons and fonts; no Tailwind build required.
 
