@@ -21,6 +21,10 @@ Use props for variants such as `border` or `shape="circle"`; use classes for col
 
 Use `class` for fixed classes, `classes` for computed fragments and `classList` for boolean toggles. Empty strings omit fragments; Solid signals keep them reactive.
 
+Keep fixed classes in `class` and pass dynamic strings as `classes={[color(), size()]}` instead of assembling a template string. Conditional fragments still use expressions such as `active() ? 'primary' : 'secondary'`.
+
+Solid already compiles reactive `class` and `classList`. `classes` is this library's array API: it simplifies composition and lets our compiler lower supported primitives with dynamic fragments; arbitrary dynamic `class` retains the component.
+
 ```tsx
 import { createSignal } from 'solid-js'
 import { Button } from 'solid-beer'
@@ -32,7 +36,7 @@ export default function Favorite() {
       border
       class="margin"
       classes={[active() ? 'primary' : 'secondary']}
-      classList={{ round: active() }}
+      classList={{ 'large-margin': active() }}
       aria-pressed={active()}
       onClick={() => setActive(value => !value)}
     >
