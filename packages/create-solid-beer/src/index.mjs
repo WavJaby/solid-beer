@@ -21,7 +21,7 @@ Options:
 Examples:
   npm create solid-beer@latest my-app
   bunx create-solid-beer@latest my-app
-  node dist/index.mjs my-app --library /absolute/path/solid-beer-0.0.0.tgz`;
+  node dist/index.mjs my-app --library /absolute/path/solid-beer-VERSION.tgz`;
 const MAX_PACKAGE_NAME_LENGTH = 214; // npm package-name limit.
 const template = fileURLToPath(new URL('./template/', import.meta.url));
 const quotePath = value => process.platform === 'win32'

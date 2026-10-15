@@ -6,17 +6,17 @@ Solid + TypeScript + Vite. Public package imports, compiler enabled by default, 
 
 If `create-solid-beer` generated this app, its library dependency is already configured. Run `npm install` + `npm run dev`, or `bun install` + `bun run dev`.
 
-If you copied this template manually before npm publication, install a freshly built Solid Beer tarball first. This replaces the unpublished `solid-beer` dependency and installs the app's other dependencies:
+If you copied this template manually, run the same install/dev commands. To test local library changes, install a freshly built tarball instead:
 
 ```sh
-npm install "solid-beer@file:/absolute/path/solid-beer-0.0.0.tgz"
+npm install "solid-beer@file:/absolute/path/solid-beer-0.1.0.tgz"
 # Or:
-bun add "solid-beer@file:/absolute/path/solid-beer-0.0.0.tgz"
+bun add "solid-beer@file:/absolute/path/solid-beer-0.1.0.tgz"
 ```
 
-After publication, set `dependencies.solid-beer` to the published version and run `npm install` or `bun install`.
+To return to the registry package, set `dependencies.solid-beer` to the published version and run `npm install` or `bun install`.
 
-Use your archive's absolute path; on Windows use forward slashes, for example `solid-beer@file:E:/packages/solid-beer-0.0.0.tgz`. Naming the package explicitly prevents Bun from looking up the unpublished placeholder version before replacing it.
+Use your archive's absolute path; on Windows use forward slashes, for example `solid-beer@file:E:/packages/solid-beer-0.1.0.tgz`. Naming the package explicitly replaces the dependency without a registry lookup.
 
 ```sh
 npm run dev

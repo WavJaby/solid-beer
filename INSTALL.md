@@ -2,8 +2,6 @@
 
 [Usage and examples](README.md) / [Choose your setup](#choose-your-setup) / [Demo hosting](#demo-hosting)
 
-Pre-release: neither package is available on npm yet. Use local tarballs; registry commands apply after publication.
-
 ## Choose your setup
 
 | Project | Start here | Required changes |
@@ -37,7 +35,7 @@ Vite 5 remains a legacy peer for existing projects; its build/SSR path is retain
 
 ## Install package
 
-Manual setup includes the compiler by default. After publication, install the library:
+Manual setup includes the compiler by default. Install the library:
 
 ```sh
 npm install solid-beer
@@ -47,7 +45,7 @@ bun add solid-beer
 
 Keep a compatible Solid version; otherwise install `solid-js@^1.9.17` with the same package manager. Next, complete [compiler setup](#vite-compiler) and [app setup](#app-setup). To omit compilation, follow [Disable the compiler](#disable-the-compiler). Package installation alone does not edit Vite configuration. CLI-generated apps already declare their dependencies: run their printed install command instead.
 
-### Install before publication
+### Local tarball
 
 In the library checkout, create a fresh archive:
 
@@ -59,12 +57,12 @@ bun pm pack
 In the app, install the named local dependency:
 
 ```sh
-npm install "solid-beer@file:/absolute/path/solid-beer-0.0.0.tgz"
+npm install "solid-beer@file:/absolute/path/solid-beer-0.1.0.tgz"
 # Or:
-bun add "solid-beer@file:/absolute/path/solid-beer-0.0.0.tgz"
+bun add "solid-beer@file:/absolute/path/solid-beer-0.1.0.tgz"
 ```
 
-Use your archive's path; on Windows use forward slashes, for example `solid-beer@file:E:/packages/solid-beer-0.0.0.tgz`. Explicit naming replaces an unpublished dependency without a registry lookup. Pack and reinstall after library changes. Tarball and registry installs use the same public imports.
+Use your archive's path; on Windows use forward slashes, for example `solid-beer@file:E:/packages/solid-beer-0.1.0.tgz`. Explicit naming replaces the dependency without a registry lookup. Pack and reinstall after library changes. Tarball and registry installs use the same public imports.
 
 ## New project
 
@@ -72,7 +70,7 @@ Use the configured CLI starter, copy it from the checkout, or configure an offic
 
 ### Create Solid Beer
 
-After both packages are published, generate a configured Solid + TypeScript + Vite app with one package manager:
+Generate a configured Solid + TypeScript + Vite app with one package manager:
 
 ```sh
 npm create solid-beer@latest my-app
@@ -90,11 +88,11 @@ bun run dev
 
 The starter includes Vite/TypeScript configuration, a sample app with Button/Collapsible/DialogStack and the compiler with its direct Babel dev dependency. To opt out, use `npm create solid-beer@latest my-app -- --no-compiler` or `bunx create-solid-beer@latest my-app --no-compiler`. Tailwind is not installed. The CLI creates files in new or empty destinations, including `.`; it refuses nonempty destinations and does not install dependencies or initialize Git.
 
-Before publication, [pack the library](#install-before-publication), then run from this checkout:
+To test local changes, [pack the library](#local-tarball), then run from this checkout:
 
 ```sh
 bun run build:create
-node packages/create-solid-beer/dist/index.mjs my-app --library ./solid-beer-0.0.0.tgz --package-manager bun
+node packages/create-solid-beer/dist/index.mjs my-app --library ./solid-beer-0.1.0.tgz --package-manager bun
 cd my-app
 bun install
 bun run dev

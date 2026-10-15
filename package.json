@@ -1,6 +1,6 @@
 {
   "name": "solid-beer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "BeerCSS-first components for SolidJS with optional Tailwind CSS utilities",
   "license": "MIT",
   "author": "WavJaby",

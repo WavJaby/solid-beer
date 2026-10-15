@@ -2,9 +2,7 @@
 
 Create a Solid Beer app with Solid + TypeScript + Vite. Styles/runtime, Button, DialogStack and Collapsible are configured; the compiler is enabled by default, Tailwind is not installed. Requires Node.js `^20.19.0 || >=22.12.0`.
 
-## Published usage
-
-These commands become available after `solid-beer` and `create-solid-beer` are published:
+## Usage
 
 ```sh
 npm create solid-beer@latest my-app
@@ -31,14 +29,14 @@ The CLI creates files only. It accepts new or empty directories, including `.`, 
 
 Forward npm options after `--`, for example `npm create solid-beer@latest my-app -- --no-compiler`. With Bun: `bunx create-solid-beer@latest my-app --no-compiler`.
 
-## Before publication
+## Test local changes
 
 From the repository root:
 
 ```sh
 bun pm pack
 node packages/create-solid-beer/scripts/build.mjs
-node packages/create-solid-beer/dist/index.mjs my-app --library ./solid-beer-0.0.0.tgz
+node packages/create-solid-beer/dist/index.mjs my-app --library ./solid-beer-0.1.0.tgz
 cd my-app
 bun install
 bun run dev
